@@ -1,0 +1,50 @@
+{
+  "hdr_scale": 3.2,
+  "lightmap_intensity": 10.0531,
+  "atlas_scales": {
+    "fascias_soffits": 6.1472,
+    "shell_walls": 3.4065,
+    "tiers_stage": 4.7792,
+    "oak_veil": 2.7922
+  },
+  "atlas_lightmap_intensities": {
+    "fascias_soffits": 19.312,
+    "shell_walls": 10.7018,
+    "tiers_stage": 15.0143,
+    "oak_veil": 8.772
+  },
+  "recommended_exposure": 0.7,
+  "atlas_resolution": 4096,
+  "atlases": {
+    "fascias_soffits": "./assets/lightmaps/lm_fascias_soffits_4k.jpg",
+    "shell_walls": "./assets/lightmaps/lm_shell_walls_4k.jpg",
+    "tiers_stage": "./assets/lightmaps/lm_tiers_stage_4k.jpg",
+    "oak_veil": "./assets/lightmaps/lm_oak_veil_4k.jpg"
+  },
+  "object_to_atlas": {
+    "WS1_LowerBalcony_Fascia": "fascias_soffits",
+    "WS1_UpperBalcony_Fascia": "fascias_soffits",
+    "WS1_TechGallery_Fascia": "fascias_soffits",
+    "WS1_LowerBalcony_Soffit": "fascias_soffits",
+    "WS1_UpperBalcony_Soffit": "fascias_soffits",
+    "WS1_TechGallery_Soffit": "fascias_soffits",
+    "WS1_Stage_Deck__WS1_Oak_BalconyFascia": "fascias_soffits",
+    "WS1_Stage_Surround_Wall__WS1_Oak_BalconyFascia": "fascias_soffits",
+    "WS1_Parterre_And_StageBoxes__WS1_Oak_BalconyFascia": "fascias_soffits",
+    "WS1_Choir_Backdrop_Walls__WS1_Oak_BalconyFascia": "fascias_soffits",
+    "WS1_Acoustic_Vestibules_Doors__WS1_Oak_BalconyFascia": "fascias_soffits",
+    "WS1_Perimeter_Plaster_Walls": "shell_walls",
+    "WS1_Choir_Backdrop_Walls__WS1_Dark_AcousticPlaster": "shell_walls",
+    "WS1_Acoustic_Vestibules_Doors__WS1_Dark_AcousticPlaster": "shell_walls",
+    "WS1_UpperBalcony_Risers": "tiers_stage",
+    "WS1_ChoirLoft_Risers": "tiers_stage",
+    "WS1_Steinway_Soundboard": "tiers_stage",
+    "WS1_Stage_Deck__WS1_Oak_Stage": "tiers_stage",
+    "WS1_Orchestra_Risers__WS1_Oak_Floor": "tiers_stage",
+    "WS1_Parterre_And_StageBoxes__WS1_Oak_Floor": "tiers_stage",
+    "WS1_LowerBalcony_Risers__WS1_Oak_Floor": "tiers_stage",
+    "WS1_Aisle_Stairs__WS1_Oak_Floor": "tiers_stage",
+    "WS2_StageReflector_OakCanopy": "oak_veil",
+    "WS2_BaillieVeil_OakStrands": "oak_veil"
+  }
+}

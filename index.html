@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Koerner Hall - 1780 Stein-Schule Fortepiano &amp; Spatial Acoustics</title>
+  <meta name="description" content="Interactive 3D acoustic simulation of Toronto's Koerner Hall featuring a CAD-reconstructed c. 1780 Stein-Schule South German fortepiano, 5 synchronized solo Creative Commons period fortepiano recordings, and seat-dependent room acoustics across 1,135 seats." />
+  <meta property="og:title" content="Koerner Hall - 1780 Stein-Schule Fortepiano &amp; Spatial Acoustics" />
+  <meta property="og:description" content="Interactive 3D acoustic simulation of Toronto's Koerner Hall featuring a CAD-reconstructed c. 1780 Stein-Schule South German fortepiano, 5 synchronized solo Creative Commons period fortepiano recordings, and seat-dependent room acoustics across 1,135 seats." />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2318181B'/%3E%3Cpath d='M6 21 C11 11, 21 11, 26 21' stroke='%23D4A36A' stroke-width='2.5' fill='none'/%3E%3Cpath d='M9 24 C13 16, 19 16, 23 24' stroke='%23FAF9F6' stroke-width='1.6' fill='none'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+  <canvas id="webgl-canvas" aria-label="Koerner Hall 3D WebGL2 Viewport"></canvas>
+
+  <!-- Subtle 3D chair / fortepiano / 61-key hover label (hidden at rest: 0% resting HUD footprint) -->
+  <div id="seat-hover-pill" aria-hidden="true"></div>
+
+  <!-- Click-outside-to-close 2D Floor Plan Popover (hidden at rest: 0% resting HUD footprint) -->
+  <div id="seat-popover" role="dialog" aria-label="Koerner Hall Seating Plan" hidden>
+    <div class="popover-header">
+      <div class="popover-tabs" role="tablist" aria-label="Auditorium Tiers">
+        <button type="button" class="tier-tab active" data-tier="Orchestra" role="tab" aria-selected="true">Orchestra</button>
+        <button type="button" class="tier-tab" data-tier="Lower Balcony" role="tab" aria-selected="false">Lower Balcony</button>
+        <button type="button" class="tier-tab" data-tier="Upper Balcony" role="tab" aria-selected="false">Upper Balcony</button>
+        <button type="button" class="tier-tab" data-tier="Choir Loft" role="tab" aria-selected="false">Choir Loft</button>
+      </div>
+      <button type="button" id="popover-close-btn" class="popover-close" aria-label="Close floor plan">&times;</button>
+    </div>
+
+    <div class="popover-map-wrap">
+      <svg id="seat-map-svg" viewBox="-12 -16 24 40" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Interactive Seat Map"></svg>
+      <div id="popover-seat-tooltip" hidden></div>
+    </div>
+
+    <div class="popover-footer">
+      <span id="popover-seat-summary">Koerner Hall &middot; 1,135 Seats &middot; Click 1780 Fortepiano or any seat</span>
+    </div>
+  </div>
+
+  <!-- Contextual Stage-Fortepiano Inspection Bar (hidden unless navigating around the 1780 Fortepiano on stage) -->
+  <div id="piano-view-bar" role="toolbar" aria-label="c. 1780 Stein-Schule Fortepiano Stage Views" hidden>
+    <button type="button" class="piano-preset-btn active" data-piano-preset="bentside">Bentside</button>
+    <button type="button" class="piano-preset-btn" data-piano-preset="pianist">Klaviatur</button>
+    <button type="button" class="piano-preset-btn" data-piano-preset="harp">Soundboard</button>
+    <button type="button" class="piano-preset-btn" data-piano-preset="action">Prellmechanik</button>
+    <button type="button" class="piano-preset-btn" data-piano-preset="hall_view">Stage &rarr; Hall</button>
+    <span class="hud-sep" aria-hidden="true"></span>
+    <button type="button" id="piano-return-seat-btn" class="piano-return-btn" title="Glide back to your auditorium seat (or press P)">Return to Seat</button>
+  </div>
+
+  <!-- STRICT COMPACT FLOATING HUD CAPSULE (<= 3.5% viewport pixels) -->
+  <div id="hud-capsule" role="toolbar" aria-label="Performance, Seat, and Room Acoustic Controls">
+    <button type="button" id="hud-play-btn" class="hud-btn hud-play-btn" aria-label="Play or pause historical fortepiano performance" title="Play Domenico Alberti — Sonata for the Fortepiano in A Major, Op. 1 No. 5 (Space)">
+      &#9654;
+    </button>
+    <select id="hud-piece-select" class="hud-piece-select" aria-label="Select historical fortepiano work" title="Select period fortepiano recording"></select>
+    <input type="range" id="hud-scrub" class="hud-scrub" min="0" max="1000" value="0" aria-label="Playback timeline" title="Scrub historical fortepiano timeline" />
+    <span id="hud-time" class="hud-time hud-mono">0:00 / 5:08</span>
+    <span class="hud-sep" aria-hidden="true"></span>
+    <button type="button" id="hud-seat-btn" class="hud-btn hud-seat-readout" title="Choose any of the 1,135 seats or click the c. 1780 Fortepiano on stage">
+      Orchestra &middot; Row H &middot; Seat 14 &#9652;
+    </button>
+    <span class="hud-sep" aria-hidden="true"></span>
+    <span id="hud-acoustic-pill" class="hud-acoustic hud-mono" title="Real-time seat acoustic telemetry">13.6m &middot; Orchestra Sweet Spot &middot; C80 +2.3dB</span>
+    <span class="hud-sep" aria-hidden="true"></span>
+    <button type="button" id="hud-mode-btn" class="hud-btn" title="Cycle Seated / Piano / Walk mode (or press P)">Seated</button>
+    <span class="hud-sep" aria-hidden="true"></span>
+    <button type="button" id="hud-lens-btn" class="hud-btn hud-mono" title="Toggle 50mm / 32mm lens (scroll to zoom)">50mm</button>
+  </div>
+
+  <!-- Minimal Warm-Carbon Loading Curtain (removed from layout after 2 compiled WebGL2 frames) -->
+  <div id="loading-curtain">
+    <div class="curtain-inner">
+      <div class="curtain-kicker">THE ROYAL CONSERVATORY OF MUSIC &middot; TORONTO</div>
+      <div class="curtain-title">Koerner Hall</div>
+      <div class="curtain-status" id="loading-status">Initializing c. 1780 Stein-Schule Fortepiano, acoustic shell &amp; WebGL2 renderer&hellip;</div>
+      <div class="curtain-bar-track"><div class="curtain-bar-fill" id="loading-bar"></div></div>
+    </div>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

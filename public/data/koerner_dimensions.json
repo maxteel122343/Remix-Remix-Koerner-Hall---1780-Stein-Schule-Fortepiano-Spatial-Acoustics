@@ -1,0 +1,1214 @@
+{
+  "venue": {
+    "name": "Koerner Hall, TELUS Centre for Performance and Learning",
+    "institution": "The Royal Conservatory of Music",
+    "address": "273 Bloor St W, Toronto, ON M5S 2W2, Canada",
+    "architect": "KPMB Architects (Marianne McKenna, Partner-in-Charge)",
+    "acoustician": "Sound Space Vision (Bob Essert) & Aercoustics Engineering",
+    "official_capacity": 1135
+  },
+  "coordinate_system": {
+    "units": "meters",
+    "blender_unit_scale": 1.0,
+    "origin": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "origin_description": "Stage front-center floor edge at Orchestra front floor datum (x=0 centerline, y=0 stage apron face, z=0 Orchestra front floor).",
+    "blender_axes": {
+      "+X": "House Right (audience right facing stage; Stage Left)",
+      "-X": "House Left (audience left facing stage; Stage Right)",
+      "+Y": "Into audience house toward rear Orchestra wall",
+      "-Y": "Concert Stage (0 to -11.20 m) & Choir Loft (-11.35 to -13.85 m)",
+      "+Z": "Vertically UP (stage_deck_z = +0.960 m)"
+    },
+    "threejs_gltf_transform": {
+      "formula": "x_three = x_b, y_three = z_b, z_three = -y_b",
+      "inverse": "x_b = x_three, y_b = -z_three, z_b = y_three"
+    },
+    "yaw_pitch_convention": {
+      "eye_height_offset_m": 1.12,
+      "forward_xy_from_yaw_deg": "fx = +sin(radians(yaw_deg)), fy = -cos(radians(yaw_deg))",
+      "zero_yaw_direction": "Straight toward Concert Stage (-Y in Blender, +Z in Three.js)"
+    }
+  },
+  "inner_width_m": 21.6,
+  "ceiling_z_m": 19.8,
+  "stage_deck_z": 0.96,
+  "stage_rear_y": -11.2,
+  "upstage_wall_y": -14.2,
+  "rear_wall_y": 26.2,
+  "hall": {
+    "inner_width_m": 21.6,
+    "x_min_m": -10.8,
+    "x_max_m": 10.8,
+    "inner_length_m": 40.4,
+    "upstage_wall_y_m": -14.2,
+    "rear_wall_y_m": 26.2,
+    "parterre_pit_width_m": 16.0,
+    "parterre_inner_wall_x_abs_m": 8.0,
+    "ceiling_z_m": 19.8,
+    "ceiling_height_m": 19.8,
+    "technical_gallery_floor_z_m": 12.84,
+    "technical_gallery_inner_x_abs_m": 9.8,
+    "undulating_plaster_walls": {
+      "course_height_m": 0.4,
+      "tile_width_m": 1.2,
+      "convex_pillow_relief_m": 0.048,
+      "z_band_lower_m": [
+        4.95,
+        7.9
+      ],
+      "z_band_upper_m": [
+        9.05,
+        12.45
+      ],
+      "retractable_banners_state": "retracted (classical acoustic mode exposing sculpted dark charcoal plaster)"
+    }
+  },
+  "shoebox": {
+    "inner_width_m": 21.6,
+    "inner_length_m": 40.4,
+    "ceiling_z_m": 19.8,
+    "rear_wall_y_m": 26.2,
+    "upstage_wall_y_m": -14.2
+  },
+  "stage": {
+    "deck_z_m": 0.96,
+    "z_m": 0.96,
+    "width_m": 16.0,
+    "x_span_m": [
+      -8.0,
+      8.0
+    ],
+    "front_apron_center_y_m": 0.0,
+    "front_apron_curve_formula": "y_apron(x) = -0.0085 * x^2 (0.000 m at x=0, -0.544 m at x=+-8.00 m)",
+    "rear_y_m": -11.2,
+    "stage_rear_y": -11.2,
+    "surround_wall": {
+      "arc_center_y_m": 9.0,
+      "arc_radius_m": 20.2,
+      "height_top_z_m": 4.16,
+      "material": "stage_surround_slotted_oak",
+      "helmholtz_acoustic_slots": "Horizontal dark acoustic resonator slots in 3 recessed panels + upper frieze band (see ref_01, ref_02)"
+    },
+    "steinway_model_d": {
+      "model": "Steinway & Sons Model D Concert Grand (9 ft / 2.74 m)",
+      "length_m": 2.74,
+      "width_m": 1.56,
+      "rim_height_above_deck_m": 0.42,
+      "leg_clearance_above_deck_m": 0.64,
+      "center_xyz": [
+        -0.85,
+        -3.2,
+        0.96
+      ],
+      "keyboard_x_m": -2.15,
+      "tail_x_m": 0.59,
+      "lid_open_angle_deg": 42.0,
+      "lid_hinge_side": "upstage (-Y), opening toward audience (+Y)",
+      "artist_bench_xyz": [
+        -2.48,
+        -3.2,
+        0.96
+      ]
+    }
+  },
+  "orchestra": {
+    "seat_count": 528,
+    "centre_seat_count": 444,
+    "arc_center_y_m": -26.0,
+    "first_row_y0_m": 1.48,
+    "last_row_y0_m": 21.22,
+    "rear_wall_y_m": 22.85,
+    "row_tread_m": 0.94,
+    "seat_arc_pitch_m": 0.556,
+    "rows": [
+      {
+        "row": "AA",
+        "seat_count": 22,
+        "y_centerline_m": 1.48,
+        "arc_radius_m": 27.48,
+        "z_riser_m": 0.0,
+        "split_mix_notch": false
+      },
+      {
+        "row": "BB",
+        "seat_count": 23,
+        "y_centerline_m": 2.42,
+        "arc_radius_m": 28.42,
+        "z_riser_m": 0.0,
+        "split_mix_notch": false
+      },
+      {
+        "row": "CC",
+        "seat_count": 24,
+        "y_centerline_m": 3.36,
+        "arc_radius_m": 29.36,
+        "z_riser_m": 0.04,
+        "split_mix_notch": false
+      },
+      {
+        "row": "A",
+        "seat_count": 23,
+        "y_centerline_m": 4.3,
+        "arc_radius_m": 30.3,
+        "z_riser_m": 0.085,
+        "split_mix_notch": false
+      },
+      {
+        "row": "B",
+        "seat_count": 22,
+        "y_centerline_m": 5.24,
+        "arc_radius_m": 31.24,
+        "z_riser_m": 0.135,
+        "split_mix_notch": false
+      },
+      {
+        "row": "C",
+        "seat_count": 23,
+        "y_centerline_m": 6.18,
+        "arc_radius_m": 32.18,
+        "z_riser_m": 0.19,
+        "split_mix_notch": false
+      },
+      {
+        "row": "D",
+        "seat_count": 22,
+        "y_centerline_m": 7.12,
+        "arc_radius_m": 33.12,
+        "z_riser_m": 0.25,
+        "split_mix_notch": false
+      },
+      {
+        "row": "E",
+        "seat_count": 21,
+        "y_centerline_m": 8.06,
+        "arc_radius_m": 34.06,
+        "z_riser_m": 0.315,
+        "split_mix_notch": false
+      },
+      {
+        "row": "F",
+        "seat_count": 22,
+        "y_centerline_m": 9.0,
+        "arc_radius_m": 35.0,
+        "z_riser_m": 0.385,
+        "split_mix_notch": false
+      },
+      {
+        "row": "G",
+        "seat_count": 21,
+        "y_centerline_m": 9.94,
+        "arc_radius_m": 35.94,
+        "z_riser_m": 0.46,
+        "split_mix_notch": false
+      },
+      {
+        "row": "H",
+        "seat_count": 20,
+        "y_centerline_m": 10.88,
+        "arc_radius_m": 36.88,
+        "z_riser_m": 0.54,
+        "split_mix_notch": false
+      },
+      {
+        "row": "J",
+        "seat_count": 21,
+        "y_centerline_m": 11.82,
+        "arc_radius_m": 37.82,
+        "z_riser_m": 0.625,
+        "split_mix_notch": false
+      },
+      {
+        "row": "K",
+        "seat_count": 20,
+        "y_centerline_m": 12.76,
+        "arc_radius_m": 38.76,
+        "z_riser_m": 0.715,
+        "split_mix_notch": false
+      },
+      {
+        "row": "L",
+        "seat_count": 19,
+        "y_centerline_m": 13.7,
+        "arc_radius_m": 39.7,
+        "z_riser_m": 0.81,
+        "split_mix_notch": false
+      },
+      {
+        "row": "M",
+        "seat_count": 20,
+        "y_centerline_m": 14.64,
+        "arc_radius_m": 40.64,
+        "z_riser_m": 0.905,
+        "split_mix_notch": false
+      },
+      {
+        "row": "N",
+        "seat_count": 19,
+        "y_centerline_m": 15.58,
+        "arc_radius_m": 41.58,
+        "z_riser_m": 1.005,
+        "split_mix_notch": false
+      },
+      {
+        "row": "P",
+        "seat_count": 18,
+        "y_centerline_m": 16.52,
+        "arc_radius_m": 42.52,
+        "z_riser_m": 1.105,
+        "split_mix_notch": false
+      },
+      {
+        "row": "Q",
+        "seat_count": 19,
+        "y_centerline_m": 17.46,
+        "arc_radius_m": 43.46,
+        "z_riser_m": 1.21,
+        "split_mix_notch": false
+      },
+      {
+        "row": "R",
+        "seat_count": 18,
+        "y_centerline_m": 18.4,
+        "arc_radius_m": 44.4,
+        "z_riser_m": 1.315,
+        "split_mix_notch": false
+      },
+      {
+        "row": "S",
+        "seat_count": 19,
+        "y_centerline_m": 19.34,
+        "arc_radius_m": 45.34,
+        "z_riser_m": 1.42,
+        "split_mix_notch": false
+      },
+      {
+        "row": "T",
+        "seat_count": 14,
+        "y_centerline_m": 20.28,
+        "arc_radius_m": 46.28,
+        "z_riser_m": 1.53,
+        "split_mix_notch": true
+      },
+      {
+        "row": "U",
+        "seat_count": 14,
+        "y_centerline_m": 21.22,
+        "arc_radius_m": 47.22,
+        "z_riser_m": 1.64,
+        "split_mix_notch": true
+      }
+    ],
+    "sound_mix_notch": {
+      "x_span_m": [
+        -1.42,
+        1.42
+      ],
+      "y_span_m": [
+        20.0,
+        22.85
+      ],
+      "desk_z_m": 2.38,
+      "splits_rows": [
+        "T",
+        "U"
+      ]
+    },
+    "stage_boxes": {
+      "seat_count_each": 8,
+      "inner_wall_x_abs_m": 8.0,
+      "solid_oak_parapet_top_z_m": 1.48,
+      "row_a_x_abs_m": 8.58,
+      "row_b_x_abs_m": 9.52,
+      "row_a_z_riser_m": 1.06,
+      "row_b_z_riser_m": 1.5,
+      "y_span_m": [
+        0.7,
+        3.85
+      ],
+      "sawtooth_yaw_abs_deg": 72.0
+    },
+    "parterres": {
+      "seat_count_each": 34,
+      "inner_wall_x_abs_m": 8.0,
+      "row_a_x_abs_m": 8.62,
+      "row_b_x_abs_m": 9.56,
+      "front_block_y_span_m": [
+        4.65,
+        11.45
+      ],
+      "entry_stair_gap_y_span_m": [
+        11.45,
+        12.35
+      ],
+      "rear_block_y_span_m": [
+        12.35,
+        19.45
+      ],
+      "accessible_terrace_y_span_m": [
+        19.45,
+        21.3
+      ],
+      "row_a_z_riser_range_m": [
+        1.1,
+        1.63
+      ],
+      "row_b_z_riser_range_m": [
+        1.48,
+        2.01
+      ],
+      "accessible_w_z_riser_m": 1.68,
+      "solid_oak_parapet_offset_above_row_a_m": 0.48,
+      "bronze_sightline_rail_offset_above_row_a_m": 0.8,
+      "sawtooth_yaw_abs_deg": 72.0
+    }
+  },
+  "lower_balcony": {
+    "seat_count": 240,
+    "centre_seat_count": 142,
+    "front_edge_y_m": 16.9,
+    "overhang_y_m": 16.9,
+    "arc_center_y_m": -18.0,
+    "fascia_arc_radius_m": 34.9,
+    "soffit_z_m": 3.86,
+    "underside_z_m": 3.86,
+    "row_a_y0_m": 17.42,
+    "row_a_z_riser_m": 4.24,
+    "row_tread_m": 0.94,
+    "riser_step_m": 0.38,
+    "row_e_y0_m": 21.18,
+    "row_e_z_riser_m": 5.76,
+    "rear_wall_y_m": 22.45,
+    "solid_oak_fascia_top_z_m": 4.72,
+    "sightline_guardrail_top_z_m": 5.04,
+    "fascia_reveal_grooves": 5,
+    "side_arms": {
+      "inner_fascia_x_abs_m": 8.12,
+      "soffit_z_m": 3.86,
+      "solid_oak_fascia_top_z_m": 4.72,
+      "sightline_guardrail_top_z_m": 5.04,
+      "row_a_x_abs_m": 8.64,
+      "row_b_x_abs_m": 9.58,
+      "row_a_z_riser_m": 4.24,
+      "row_b_z_riser_m": 4.76,
+      "loge_11_16_y_span_m": [
+        3.95,
+        16.25
+      ],
+      "loge_12_15_y_span_m": [
+        -1.05,
+        3.15
+      ],
+      "loge_12_15_row_a_x_abs_m": 8.6
+    }
+  },
+  "upper_balcony": {
+    "seat_count": 240,
+    "centre_seat_count": 178,
+    "front_edge_y_m": 19.08,
+    "overhang_y_m": 19.08,
+    "arc_center_y_m": -18.0,
+    "fascia_arc_radius_m": 37.08,
+    "soffit_z_m": 7.96,
+    "underside_z_m": 7.96,
+    "row_a_y0_m": 19.58,
+    "row_a_z_riser_m": 8.34,
+    "row_tread_m": 0.9,
+    "riser_step_m": 0.56,
+    "row_g_y0_m": 24.98,
+    "row_g_z_riser_m": 11.7,
+    "rear_wall_y_m": 26.2,
+    "solid_oak_fascia_top_z_m": 8.8,
+    "sightline_guardrail_top_z_m": 9.14,
+    "fascia_reveal_grooves": 5,
+    "side_galleries": {
+      "inner_fascia_x_abs_m": 9.14,
+      "soffit_z_m": 7.96,
+      "solid_oak_fascia_top_z_m": 8.76,
+      "sightline_guardrail_top_z_m": 9.12,
+      "row_a_x_abs_m": 9.64,
+      "row_a_z_riser_m": 8.34,
+      "loge_21_24_y_span_m": [
+        5.9,
+        17.3
+      ],
+      "loge_22_23_y_span_m": [
+        -1.3,
+        4.7
+      ]
+    }
+  },
+  "choir_loft": {
+    "seat_count": 127,
+    "rear_y_m": -14.2,
+    "top_riser_z_m": 7.92,
+    "max_z_m": 7.92,
+    "gallery_1": {
+      "seat_count": 51,
+      "arc_center_y_m": 9.0,
+      "fascia_arc_radius_m": 20.36,
+      "front_edge_y0_m": -11.36,
+      "row_a_y0_m": -11.82,
+      "row_b_y0_m": -12.74,
+      "row_a_z_riser_m": 4.16,
+      "row_b_z_riser_m": 4.68,
+      "solid_oak_fascia_top_z_m": 4.6,
+      "sightline_guardrail_top_z_m": 4.96
+    },
+    "loge_13_14": {
+      "seat_count_each": 21,
+      "y_span_m": [
+        -9.85,
+        -3.2
+      ],
+      "row_a_x_abs_range_m": [
+        7.92,
+        8.6
+      ],
+      "row_b_x_abs_range_m": [
+        8.86,
+        9.54
+      ],
+      "row_a_z_riser_m": 4.16,
+      "row_b_z_riser_m": 4.68,
+      "solid_oak_fascia_top_z_m": 4.6,
+      "sightline_guardrail_top_z_m": 4.96
+    },
+    "gallery_2": {
+      "seat_count": 34,
+      "arc_center_y_m": 14.0,
+      "fascia_arc_radius_m": 26.06,
+      "front_edge_y0_m": -12.06,
+      "row_a_y0_m": -12.48,
+      "row_a_z_riser_m": 7.92,
+      "soffit_z_m": 7.56,
+      "solid_oak_fascia_top_z_m": 8.32,
+      "sightline_guardrail_top_z_m": 8.76,
+      "rear_folded_oak_wall_y_m": -13.85
+    }
+  },
+  "baillie_oak_veil": {
+    "designer": "KPMB Architects + Sound Space Vision (Bob Essert)",
+    "strand_count_spec": 26,
+    "plank_thickness_m": 0.038,
+    "plank_width_stage_m": 0.65,
+    "plank_width_house_m": 0.44,
+    "corner_bevel_m": 0.003,
+    "transverse_x_span_m": [
+      -10.22,
+      10.22
+    ],
+    "upper_reverberant_chamber_ceiling_z_m": 19.8,
+    "centerline_yz_spline_anchors_m": [
+      [
+        -13.85,
+        10.25
+      ],
+      [
+        -12.05,
+        12.15
+      ],
+      [
+        -10.4,
+        9.85
+      ],
+      [
+        -6.2,
+        8.95
+      ],
+      [
+        -1.2,
+        9.25
+      ],
+      [
+        4.2,
+        11.35
+      ],
+      [
+        9.8,
+        12.65
+      ],
+      [
+        15.4,
+        14.15
+      ],
+      [
+        20.6,
+        14.45
+      ],
+      [
+        25.8,
+        14.85
+      ]
+    ],
+    "stage_reflector_canopy_panel": {
+      "y_span_m": [
+        -9.6,
+        0.4
+      ],
+      "x_span_m": [
+        -6.8,
+        6.8
+      ],
+      "integrated_downlight_ports": true
+    }
+  },
+  "materials": {
+    "oak_veil": {
+      "name": "Baillie Veil Laminated Quarter-Sawn White Oak",
+      "srgb_hex": "#C6924E",
+      "srgb_255": [
+        198,
+        146,
+        78
+      ],
+      "linear_rgb": [
+        0.56471,
+        0.28744,
+        0.07619
+      ],
+      "roughness": 0.35,
+      "metallic": 0.0,
+      "clearcoat": 0.18,
+      "sheen": 0.0,
+      "verified_from": "references/inspect/ref_01_orchestra_center_stage_veil.jpg, ref_10_baillie_oak_veil_upward_hero.jpg",
+      "notes": "Steam-bent Canadian white-oak laminated veneer lumber with silky longitudinal grain & 3 mm beveled edges."
+    },
+    "balcony_oak_fascia": {
+      "name": "Curved Grooved Balcony Fascia White Oak",
+      "srgb_hex": "#C28C46",
+      "srgb_255": [
+        194,
+        140,
+        70
+      ],
+      "linear_rgb": [
+        0.53948,
+        0.26225,
+        0.06125
+      ],
+      "roughness": 0.38,
+      "metallic": 0.0,
+      "clearcoat": 0.18,
+      "sheen": 0.0,
+      "verified_from": "references/inspect/ref_12_macro_balcony_oak_fascia.jpg",
+      "notes": "Quarter-sawn white-oak curved panels with 5 routed horizontal reveal grooves and medullary ray flecks."
+    },
+    "stage_oak_deck": {
+      "name": "Concert Stage Quarter-Sawn White-Oak Deck",
+      "srgb_hex": "#D6BA76",
+      "srgb_255": [
+        214,
+        186,
+        118
+      ],
+      "linear_rgb": [
+        0.67244,
+        0.49102,
+        0.18116
+      ],
+      "roughness": 0.34,
+      "metallic": 0.0,
+      "clearcoat": 0.32,
+      "sheen": 0.0,
+      "verified_from": "references/inspect/ref_02_orchestra_front_stage_steinway.jpg",
+      "notes": "Pale golden quarter-sawn white-oak tongue-and-groove stage planks reflecting Steinway rim and stage spots."
+    },
+    "chair_oak_shell": {
+      "name": "Custom Koerner Chair White-Oak Shell & Armrests",
+      "srgb_hex": "#B98344",
+      "srgb_255": [
+        185,
+        131,
+        68
+      ],
+      "linear_rgb": [
+        0.48515,
+        0.22697,
+        0.05781
+      ],
+      "roughness": 0.4,
+      "metallic": 0.0,
+      "clearcoat": 0.16,
+      "sheen": 0.0,
+      "verified_from": "references/inspect/ref_11_macro_koerner_chair_aisle.jpg",
+      "notes": "Compound-curved molded white-oak outer back shell, solid oak armrests, and Helmholtz micro-perforated under-seat pan."
+    },
+    "chair_wool_upholstery": {
+      "name": "Custom Koerner Chair Deep Charcoal-Espresso Acoustic Wool",
+      "srgb_hex": "#261E1D",
+      "srgb_255": [
+        38,
+        30,
+        29
+      ],
+      "linear_rgb": [
+        0.01938,
+        0.01298,
+        0.01229
+      ],
+      "roughness": 0.88,
+      "metallic": 0.0,
+      "clearcoat": 0.0,
+      "sheen": 0.35,
+      "verified_from": "references/inspect/ref_08_choir_loft_into_house.jpg, ref_11_macro_koerner_chair_aisle.jpg",
+      "notes": "Tailored deep charcoal-espresso worsted acoustic wool front seat & backrest cushions with piped welt seams (NOT red or tan)."
+    },
+    "chair_metal_stanchion": {
+      "name": "Chair Cast Steel Pedestal Stanchion",
+      "srgb_hex": "#18181A",
+      "srgb_255": [
+        24,
+        24,
+        26
+      ],
+      "linear_rgb": [
+        0.00913,
+        0.00913,
+        0.01033
+      ],
+      "roughness": 0.54,
+      "metallic": 0.85,
+      "clearcoat": 0.0,
+      "sheen": 0.0,
+      "verified_from": "references/inspect/ref_11_macro_koerner_chair_aisle.jpg",
+      "notes": "Matte black powder-coated cast steel pedestal stanchions bolted flush to oak risers."
+    },
+    "balcony_bronze_guardrail": {
+      "name": "Balcony Sightline Guardrail & Sconce Hardware",
+      "srgb_hex": "#3B312B",
+      "srgb_255": [
+        59,
+        49,
+        43
+      ],
+      "linear_rgb": [
+        0.04374,
+        0.03071,
+        0.02416
+      ],
+      "roughness": 0.36,
+      "metallic": 0.88,
+      "clearcoat": 0.0,
+      "sheen": 0.0,
+      "verified_from": "references/inspect/ref_08_choir_loft_into_house.jpg, ref_12_macro_balcony_oak_fascia.jpg",
+      "notes": "Slender blackened-bronze horizontal sightline guardrails above oak knee fascias + warm bronze sconce stems (#9E7B4F)."
+    },
+    "undulating_dark_plaster": {
+      "name": "Undulating Perimeter Charcoal Acoustic Plaster",
+      "srgb_hex": "#2C2A29",
+      "srgb_255": [
+        44,
+        42,
+        41
+      ],
+      "linear_rgb": [
+        0.02519,
+        0.02315,
+        0.02217
+      ],
+      "roughness": 0.86,
+      "metallic": 0.0,
+      "clearcoat": 0.0,
+      "sheen": 0.0,
+      "verified_from": "references/inspect/ref_05_side_loge_raking_plaster_chairs.jpg, ref_08_choir_loft_into_house.jpg",
+      "notes": "Cast convex pillowed charcoal-slate acoustic plaster courses (~0.40 m high, 48 mm wave relief), warming under 2900K grazing wall-washers."
+    },
+    "soffit_cream_plaster": {
+      "name": "Under-Balcony Warm Ivory Acoustic Soffit Plaster",
+      "srgb_hex": "#E6DAC3",
+      "srgb_255": [
+        230,
+        218,
+        195
+      ],
+      "linear_rgb": [
+        0.7913,
+        0.7011,
+        0.54572
+      ],
+      "roughness": 0.78,
+      "metallic": 0.0,
+      "clearcoat": 0.0,
+      "sheen": 0.0,
+      "verified_from": "references/inspect/ref_03_under_balcony_overhang_soffit.jpg, ref_12_macro_balcony_oak_fascia.jpg",
+      "notes": "Smooth warm ivory-cream acoustic plaster soffit housing recessed 2900K tungsten downlight arrays."
+    },
+    "steinway_ebony_lacquer": {
+      "name": "Steinway Model D High-Gloss Ebony Lacquer",
+      "srgb_hex": "#0D0D0F",
+      "srgb_255": [
+        13,
+        13,
+        15
+      ],
+      "linear_rgb": [
+        0.00402,
+        0.00402,
+        0.00478
+      ],
+      "roughness": 0.06,
+      "metallic": 0.0,
+      "clearcoat": 1.0,
+      "sheen": 0.0,
+      "verified_from": "references/inspect/ref_02_orchestra_front_stage_steinway.jpg",
+      "notes": "Hand-rubbed high-gloss ebony polyester lacquer rim & open concert lid."
+    },
+    "steinway_gilded_harp": {
+      "name": "Steinway Cast-Iron Gilded Harp Plate",
+      "srgb_hex": "#C89E46",
+      "srgb_255": [
+        200,
+        158,
+        70
+      ],
+      "linear_rgb": [
+        0.57758,
+        0.34191,
+        0.06125
+      ],
+      "roughness": 0.28,
+      "metallic": 0.92,
+      "clearcoat": 0.0,
+      "sheen": 0.0,
+      "verified_from": "references/inspect/ref_02_orchestra_front_stage_steinway.jpg",
+      "notes": "Bronzed gold metallic cast-iron harp over Sitka spruce soundboard (#DFBC7A)."
+    }
+  },
+  "lighting_calibration": {
+    "stage_key_cct_k": 3100,
+    "veil_uplight_graze_cct_k": 2950,
+    "balcony_soffit_downlight_cct_k": 2850,
+    "fascia_tubular_sconce_cct_k": 2750,
+    "aisle_step_light_cct_k": 2700,
+    "upper_chamber_plenum_albedo_hex": "#101012"
+  },
+  "stage_targets": {
+    "soloist_piano": {
+      "x": -0.85,
+      "y": -3.2,
+      "z": 1.72
+    },
+    "conductor_podium": {
+      "x": 0.0,
+      "y": -1.65,
+      "z": 2.06
+    },
+    "stage_left": {
+      "x": 4.2,
+      "y": -4.4,
+      "z": 1.92
+    },
+    "stage_right": {
+      "x": -4.2,
+      "y": -4.4,
+      "z": 1.92
+    },
+    "upstage_center": {
+      "x": 0.0,
+      "y": -7.4,
+      "z": 2.08
+    }
+  },
+  "benchmark_cameras": [
+    {
+      "id": "01",
+      "title": "Orchestra Center (Row H) -> Stage & Oak Veil",
+      "tier": "Orchestra",
+      "seat_id": "ORCH-H-11",
+      "eye": [
+        0.2771,
+        10.759,
+        1.66
+      ],
+      "target": [
+        0.0,
+        -3.5,
+        3.6
+      ],
+      "vfov_deg": 42.0,
+      "focal_mm": 31.3,
+      "ref_img": "references/inspect/ref_01_orchestra_center_stage_veil.jpg",
+      "crop_xy": [
+        0.5,
+        0.45
+      ],
+      "eye_three": [
+        0.2771,
+        1.66,
+        -10.759
+      ],
+      "target_three": [
+        0.0,
+        3.6,
+        3.5
+      ]
+    },
+    {
+      "id": "02",
+      "title": "Orchestra Front (Row B Left) -> Soloist Piano & Stage Canopy",
+      "tier": "Orchestra",
+      "seat_id": "ORCH-B-5",
+      "eye": [
+        -3.592,
+        4.912,
+        1.255
+      ],
+      "target": [
+        -0.45,
+        -3.2,
+        2.05
+      ],
+      "vfov_deg": 38.0,
+      "focal_mm": 34.9,
+      "ref_img": "references/inspect/ref_02_orchestra_front_stage_steinway.jpg",
+      "crop_xy": [
+        0.52,
+        0.58
+      ],
+      "eye_three": [
+        -3.592,
+        1.255,
+        -4.912
+      ],
+      "target_three": [
+        -0.45,
+        2.05,
+        3.2
+      ]
+    },
+    {
+      "id": "03",
+      "title": "Rear Orchestra (Under Lower Balcony Overhang)",
+      "tier": "Orchestra",
+      "seat_id": "ORCH-U-7",
+      "eye": [
+        -1.95,
+        21.15,
+        2.76
+      ],
+      "target": [
+        0.0,
+        -3.5,
+        2.85
+      ],
+      "vfov_deg": 44.0,
+      "focal_mm": 29.7,
+      "ref_img": "references/inspect/ref_03_under_balcony_overhang_soffit.jpg",
+      "crop_xy": [
+        0.5,
+        0.22
+      ],
+      "eye_three": [
+        -1.95,
+        2.76,
+        -21.15
+      ],
+      "target_three": [
+        0.0,
+        2.85,
+        3.5
+      ]
+    },
+    {
+      "id": "04",
+      "title": "Lower Balcony Center (Row A) Panoramic",
+      "tier": "Lower Balcony",
+      "seat_id": "LBAL-A-14",
+      "eye": [
+        0.0,
+        17.3,
+        5.36
+      ],
+      "target": [
+        0.0,
+        -3.8,
+        2.8
+      ],
+      "vfov_deg": 44.0,
+      "focal_mm": 29.7,
+      "ref_img": "references/inspect/ref_04_lower_balcony_center_panoramic.jpg",
+      "crop_xy": [
+        0.5,
+        0.48
+      ],
+      "eye_three": [
+        0.0,
+        5.36,
+        -17.3
+      ],
+      "target_three": [
+        0.0,
+        2.8,
+        3.8
+      ]
+    },
+    {
+      "id": "05",
+      "title": "Lower Balcony Side Box / Loge Raking View",
+      "tier": "Lower Balcony",
+      "seat_id": "LBAL-LOGE-L-4",
+      "eye": [
+        -8.5259,
+        5.6679,
+        5.36
+      ],
+      "target": [
+        2.2,
+        -2.8,
+        2.65
+      ],
+      "vfov_deg": 43.0,
+      "focal_mm": 30.5,
+      "ref_img": "references/inspect/ref_05_side_loge_raking_plaster_chairs.jpg",
+      "crop_xy": [
+        0.55,
+        0.48
+      ],
+      "eye_three": [
+        -8.5259,
+        5.36,
+        -5.6679
+      ],
+      "target_three": [
+        2.2,
+        2.65,
+        2.8
+      ]
+    },
+    {
+      "id": "06",
+      "title": "Upper Balcony Center (Row C) Steep Sightline",
+      "tier": "Upper Balcony",
+      "seat_id": "UBAL-C-11",
+      "eye": [
+        0.0,
+        21.26,
+        10.58
+      ],
+      "target": [
+        0.0,
+        -3.5,
+        2.15
+      ],
+      "vfov_deg": 43.0,
+      "focal_mm": 30.5,
+      "ref_img": "references/inspect/ref_06_upper_balcony_center_steep.jpg",
+      "crop_xy": [
+        0.5,
+        0.52
+      ],
+      "eye_three": [
+        0.0,
+        10.58,
+        -21.26
+      ],
+      "target_three": [
+        0.0,
+        2.15,
+        3.5
+      ]
+    },
+    {
+      "id": "07",
+      "title": "Upper Balcony Corner Wide Diagonal",
+      "tier": "Upper Balcony",
+      "seat_id": "UBAL-E-2",
+      "eye": [
+        -5.5665,
+        22.6809,
+        11.7
+      ],
+      "target": [
+        2.2,
+        -2.5,
+        3.3
+      ],
+      "vfov_deg": 46.0,
+      "focal_mm": 28.3,
+      "ref_img": "references/inspect/ref_07_upper_balcony_corner_diagonal.jpg",
+      "crop_xy": [
+        0.5,
+        0.48
+      ],
+      "eye_three": [
+        -5.5665,
+        11.7,
+        -22.6809
+      ],
+      "target_three": [
+        2.2,
+        3.3,
+        2.5
+      ]
+    },
+    {
+      "id": "08",
+      "title": "Choir Loft Looking Out Into House",
+      "tier": "Choir Loft",
+      "seat_id": "CHOIR-B-10",
+      "eye": [
+        -1.6572,
+        -12.5564,
+        5.8
+      ],
+      "target": [
+        0.4,
+        10.5,
+        4.2
+      ],
+      "vfov_deg": 46.0,
+      "focal_mm": 28.3,
+      "ref_img": "references/inspect/ref_08_choir_loft_into_house.jpg",
+      "crop_xy": [
+        0.5,
+        0.5
+      ],
+      "eye_three": [
+        -1.6572,
+        5.8,
+        12.5564
+      ],
+      "target_three": [
+        0.4,
+        4.2,
+        -10.5
+      ]
+    },
+    {
+      "id": "09",
+      "title": "On-Stage Performer POV Looking Into All 3 Tiers",
+      "tier": "Concert Stage",
+      "seat_id": "STAGE-SOLOIST",
+      "eye": [
+        -2.65,
+        -1.65,
+        2.16
+      ],
+      "target": [
+        0.5,
+        13.5,
+        5.2
+      ],
+      "vfov_deg": 46.0,
+      "focal_mm": 28.3,
+      "ref_img": "references/inspect/ref_09_on_stage_performer_pov.jpg",
+      "crop_xy": [
+        0.5,
+        0.48
+      ],
+      "eye_three": [
+        -2.65,
+        2.16,
+        1.65
+      ],
+      "target_three": [
+        0.5,
+        5.2,
+        -13.5
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Upward Architectural Hero of the Sculpted Baillie Oak Veil",
+      "tier": "Architectural Hero",
+      "seat_id": "ORCH-F-11",
+      "eye": [
+        -0.277,
+        8.8789,
+        1.505
+      ],
+      "target": [
+        0.0,
+        -1.5,
+        11.8
+      ],
+      "vfov_deg": 50.0,
+      "focal_mm": 25.7,
+      "ref_img": "references/inspect/ref_10_baillie_oak_veil_upward_hero.jpg",
+      "crop_xy": [
+        0.5,
+        0.45
+      ],
+      "eye_three": [
+        -0.277,
+        1.505,
+        -8.8789
+      ],
+      "target_three": [
+        0.0,
+        11.8,
+        1.5
+      ]
+    },
+    {
+      "id": "11",
+      "title": "2.5x Macro of Custom Koerner Chair & Riser Step-Light",
+      "tier": "Macro Inspection",
+      "seat_id": "MACRO-CHAIR",
+      "eye": [
+        -6.95,
+        11.65,
+        1.68
+      ],
+      "target": [
+        -5.15,
+        12.95,
+        1.18
+      ],
+      "vfov_deg": 28.0,
+      "focal_mm": 47.9,
+      "ref_img": "references/inspect/ref_11_macro_koerner_chair_aisle.jpg",
+      "crop_xy": [
+        0.5,
+        0.52
+      ],
+      "eye_three": [
+        -6.95,
+        1.68,
+        -11.65
+      ],
+      "target_three": [
+        -5.15,
+        1.18,
+        -12.95
+      ]
+    },
+    {
+      "id": "12",
+      "title": "2.5x Macro of Balcony Oak Fascia, Guardrail & Stage Planks",
+      "tier": "Macro Inspection",
+      "seat_id": "MACRO-FASCIA",
+      "eye": [
+        -5.55,
+        7.6,
+        2.32
+      ],
+      "target": [
+        -8.42,
+        3.55,
+        4.2
+      ],
+      "vfov_deg": 28.5,
+      "focal_mm": 47.1,
+      "ref_img": "references/inspect/ref_12_macro_balcony_oak_fascia.jpg",
+      "crop_xy": [
+        0.36,
+        0.45
+      ],
+      "eye_three": [
+        -5.55,
+        2.32,
+        -7.6
+      ],
+      "target_three": [
+        -8.42,
+        4.2,
+        -3.55
+      ]
+    }
+  ]
+}
